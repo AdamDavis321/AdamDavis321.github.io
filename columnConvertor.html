@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+	<title>Column Convertor</title>
+
+	<link rel="stylesheet" href="stylesheets/styles.css">
+	<link rel="stylesheet" href="stylesheets/github-dark.css">
+	<script src="javascripts/scale.fix.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<style type="text/css" media="all">
+		.FormTable td {
+			vertical-align: middle;
+		}
+		#inputText {
+			height: 12em; /* 1.2em per row */
+			width: 14em; /* 0.7em per col */
+		}
+		#outputText {
+			height: 12em; /* 1.2em per row */
+			width: 42em; /* 0.7em per col */
+		}
+	</style>
+	<style type="text/css" media="screen">
+		.wrapper {
+			margin: 0 auto;
+			max-width: 64em;
+			min-width: 52em;
+			width: auto;
+		}
+	</style>
+	<script type="text/javascript" src="javascripts/MiscUtils.js"></script>
+	<script type="text/javascript" src="javascripts/InputUtils.js"></script>
+	<script type="text/javascript">
+		cvtAction= function(colText, isNumeric, maxWidth) {
+			var items= colText.split("\n");
+			if (items.length > 0) {
+				if (items[items.length - 1] == "") {
+					items.length--;
+				}
+				for (var i= 0; i < items.length; i++) {
+					items[i]= MiscUtils.trim(items[i]);
+					if (isNumeric) {
+						items[i]= isNaN(items[i])? 0 : Number(items[i]);
+					}
+					else {
+						items[i]= "'" + items[i].replace(/'/g, "''") + "'";
+					}
+				}
+				items.sort(function(obj1, obj2) {
+					if (isNumeric) {
+						return obj1 - obj2;
+					}
+					else {
+						return obj1 > obj2? 1 : (obj1 == obj2? 0 : -1);
+					}
+				});
+				for (var i= items.length - 1; i > 0; i--) {
+					if (items[i - 1] == items[i]) {
+						items.splice(i, 1);
+					}
+				}
+			}
+			var curWidth= 1;
+			var sb= "(";
+			if (items.length > 0) {
+				sb += items[0].toString();
+				curWidth= sb.length;
+				for (var i= 1; i < items.length; i++) {
+					var s= items[i].toString();
+					if ((curWidth + s.length + 2) > maxWidth && s.length < maxWidth) {
+						sb += ",\n";
+						sb += s;
+						curWidth= s.length;
+					}
+					else {
+						sb += ", ";
+						sb += s;
+						curWidth= curWidth + s.length + 2;
+					}
+				}
+			}
+			
+			sb += ")";
+			return sb;
+		};
+		
+		window.onload= function() {
+			document.getElementById('convertForm').onsubmit= function() {
+				var dataType= InputUtils.getCheckedValue(document.getElementsByName(
+						'dataType'));
+				var maxWidth= document.getElementById('maxWidth').value;
+				var inputText= document.getElementById('inputText').value;
+				var outputText= cvtAction(inputText, (dataType == 'num'), maxWidth);
+				document.getElementById('outputText').value= outputText;
+				return false;
+			};
+		};
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="without-description">
+			<h1>Column Convertor</h1>
+		</header>
+		<section id="pageContent">
+			<form id="convertForm" name="convertForm" action="columnConvertor.html">
+	
+				<div>
+					<table class="FormTable">
+						<tr>
+							<td>Data Type:</td>
+							<td>
+								<label><input type="radio" name="dataType" value="char" 
+										checked="checked">Character</label>
+								<label><input type="radio" name="dataType" 
+										value="num">Numeric</label>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="maxWidth">Maximum width:</label>
+							</td>
+							<td>
+									<input type="text" id="maxWidth" name="maxWidth" 
+											size="3" maxlength="3" value="60">
+							</td>
+						</tr>
+					</table>
+					<table class="FormTable">
+						<tr>
+							<td>
+								<label>Input (column):<br>
+									<textarea id="inputText" name="inputText" rows="10" 
+											cols="20"></textarea>
+								</label>
+							</td>
+							<td>
+								<label>Output (list):<br>
+									<textarea id="outputText" name="outputText" rows="10" 
+											cols="60"></textarea>
+								</label>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<input type="submit" id="convertText" name="convertText" 
+										value="Convert">
+							</td>
+						</tr>
+					</table>
+				</div>
+	
+			</form>
+		</section>
+	</div>
+	<footer>
+		<p>
+			Hosted on GitHub Pages &mdash; Theme by 
+			<a href="https://github.com/orderedlist">orderedlist</a>
+		</p>
+	</footer>
+	<!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
+</body>
+</html>

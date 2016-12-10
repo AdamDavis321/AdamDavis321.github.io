@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	
+	<title>Estimating Scratchpad</title>
+	
+	<link rel="stylesheet" href="../stylesheets/styles.css">
+	<link rel="stylesheet" href="../stylesheets/github-dark.css">
+	<script src="../javascripts/scale.fix.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<style type="text/css" media="all">
+		h1 {
+			font-size: 124%;
+			margin: 0;
+		}
+		h2 {
+			font-size: 112%;
+			margin: 0.5em 0;
+		}
+		.DescriptionCell {
+			text-align: left;
+		}
+		.ComplexityCell {
+			text-align: center;
+		}
+		.EstimateCell {
+			text-align: right;
+		}
+		.DeleteButtonCell {
+			text-align: center;
+			width: 2.5em;
+		}
+		#importExportArea {
+			margin-top: 2em;
+		}
+		#importExportData {
+			display: block;
+			height: 20.4em; /* 1.2em per row */
+			width: 51.6em; /* 0.6em per col */
+		}
+	</style>
+	<style type="text/css" media="screen">
+		.wrapper {
+			margin: 0 auto;
+			max-width: 60em;
+			min-width: 47em;
+			width: auto;
+		}
+	</style>
+	<script type="text/javascript" src="../javascripts/MiscUtils.js"></script>
+	<script type="text/javascript" src="../javascripts/DomUtils.js"></script>
+	<script type="text/javascript" src="../javascripts/KeyDown.js"></script>
+	<script type="text/javascript" src="estimating.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="without-description">
+			<h1>Estimating Scratchpad</h1>
+		</header>
+		<section id="pageContent">
+			<form action="estimating.html" id="estimateForm" name="estimateForm">
+				<table>
+					<tr>
+						<td>
+							<label for="projectName">Project Name:</label>
+						</td>
+						<td>
+							<input type="text" id="projectName" name="projectName" 
+									size="30" maxlength="40" value="">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="personnelFactor">Personnel Factor:</label>
+						</td>
+						<td>
+							<input type="text" id="personnelFactor" 
+									name="personnelFactor" size="3" maxlength="4" 
+									value="1.5">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="languageFactor">Language Factor:</label>
+						</td>
+						<td>
+							<input type="text" id="languageFactor" 
+									name="languageFactor" size="3" maxlength="4" 
+									value="1.0">
+						</td>
+					</tr>
+				</table>
+				<table class="TableLines" id="taskInformation">
+					<caption>Task Information</caption>
+					<thead>
+						<tr>
+							<th rowspan="2">Task Name</th>
+							<th class="MultiLevel" colspan="5">Task Complexity</th>
+							<th rowspan="2">Estimate (in days)</th>
+							<th rowspan="2"></th>
+						</tr>
+						<tr>
+							<th>Data Access</th>
+							<th>Business Rules</th>
+							<th>Control Flow</th>
+							<th>View Options</th>
+							<th>System Interaction</th>
+						</tr>
+					</thead>
+					<tbody id="taskInformationBody">
+					</tbody>
+				</table>
+				<button type="button" id="addRowBtn" name="addRowBtn" 
+						title="Add Task Row"
+						><img alt="Add" src="../generic/images/action_add.png"></button>
+				<h2>
+					Project Estimate (in days): <span id="projectEstimate">0.0</span>
+				</h2>
+				<div id="importExportArea">
+					<label for="importExportData">Import/Export Text:</label>
+					<textarea id="importExportData" name="importExportData" rows="17" cols="86"
+							></textarea>
+					<button type="button" id="importBtn" name="importBtn" 
+							>Import</button>
+					<button type="button" id="exportBtn" name="exportBtn" 
+							>Export</button>
+				</div>
+			</form>
+			<div id="explanationArea">
+				<h2><a id="explanation"class="anchor" href="#special-characters" 
+				aria-hidden="true"><span aria-hidden="true" 
+				class="octicon octicon-link"></span>Explanation</a></h2>
+				<p>
+					The Estimating Worksheet is based on an article by <a 
+					href="http://kalvos.org/elobio.html">Arpad Elo, Jr.</a> in 
+					the May 1994 issue of Software Development magazine. The 
+					article is called "An Algorithm for Estimating Development 
+					Costs". I believe the Software Development magazine archives 
+					are now owned by <a href="http://drdobbs.com/">Dr Dobbs</a>, 
+					but I have not been able to find a copy of this article online.
+				</p>
+				<p>
+					The technique shown in this article helps me focus on how 
+					complex a given issue is/could be instead of focusing on 
+					how fast I think I can resolve it. The article includes 
+					formulas for estimating both the time needed to specify a 
+					system, and to construct and verify that system. I've only 
+					used the second formula: <q>C = sum(X[i]) * P * L</q>, 
+					where C is the work days to construct and verify the system, 
+					X[i] represents the scores asigned to the complexity terms, 
+					P is the personnel proficiency factor, and L is the 
+					(computer) language factor.
+				</p>
+				<p>
+					Complexity terms are scored from 0 to 5 for five different 
+					facets of the system (where 0 is no work at all and 5 is 
+					extremely difficult). The article suggests the following 
+					facets: Data storage and retrieval, Numerical algorithms, 
+					Non-numeric algorithms, Conditional logic, and Interactions 
+					with other software. Personally, I lump the two algorithm 
+					facets together and add another facet for Screen/page 
+					design.
+				</p>
+				<p>
+					In the article, the personnel proficiency factor can vary 
+					from 1 (a guru with detailed knowledge of the application) 
+					to 8 (a trainee with no knowledge of the application) and 
+					the language factor from 0.5 to 8. Personally, I usually 
+					set the language factor to 1 (and ignore it).
+				</p>
+				<p>
+					In my opinion, this estimation technique works great for 
+					medium-size tasks. Smaller tasks (less than a day) tend to 
+					be over-estimated, and the largest tasks (more than 10 or
+					15 days) tend to be under-estimated. I recommend using 
+					fractional numbers in your complexity terms to fine-tune 
+					smaller task estimates, and breaking up larger tasks into
+					multiple pieces before estimating.
+				</p>
+			</div>
+		</section>
+	</div>
+	<footer>
+		<p>
+			Hosted on GitHub Pages &mdash; Theme by 
+			<a href="https://github.com/orderedlist">orderedlist</a>
+		</p>
+	</footer>
+	<!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
+</body>
+</html>

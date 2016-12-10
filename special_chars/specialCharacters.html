@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	
+	<title>Special Character List</title>
+
+	<link rel="stylesheet" href="../stylesheets/styles.css">
+	<link rel="stylesheet" href="../stylesheets/github-dark.css">
+	<script src="../javascripts/scale.fix.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<style type="text/css" media="all">
+		#pageHeader h1 {
+			margin-bottom: 0;
+		}
+		#groupData {
+			margin: 0 0 1em 2em;
+		}
+		#groupData label {
+			display: block;
+			float: left;
+			white-space: nowrap;
+			width: 12em;
+		}
+		div.FloatBlocker {
+			clear: both;
+		}
+		.Glyph {
+			font-size: 118%;
+		}
+	</style>
+	<style type="text/css" media="screen">
+		.wrapper {
+			margin: 0 auto;
+			max-width: 80em;
+			min-width: 40em;
+			width: auto;
+		}
+	</style>
+	<script type="text/javascript" src="../javascripts/MiscUtils.js"></script>
+	<script type="text/javascript" src="../javascripts/DomUtils.js"></script>
+	<script type="text/javascript" src="specialCharacters.js"></script>
+
+</head>
+<body>
+	<div class="wrapper">
+		<header class="without-description">
+			<h1>Special Character List</h1>
+		</header>
+	<section id="pageContent">
+
+	<form>
+		<h4>Groups to show:</h4>
+		<div id="groupData"></div>
+		<div class="FloatBlocker"></div>
+		<input type="button" id="selectAll" name="selectAll" value="Select All" />
+		<input type="button" id="deselectAll" name="deselectAll" value="Deselect All" />
+	</form>
+	<h4>Selected Characters:</h4>
+	<table class="DataTable">
+		<thead>
+			<tr>
+				<th id="descriptionHeading">
+					Description
+				</th>
+				<th id="nameHeading">
+					Entity Name
+				</th>
+				<th id="numberHeading">
+					Decimal
+				</th>
+				<th id="groupHeading">
+					Group
+				</th>
+				<th id="notesHeading">
+					Notes
+				</th>
+			</tr>
+		</thead>
+		<tbody id="characterData"></tbody>
+	</table>
+
+		</section>
+	</div>
+	<footer>
+		<p>
+			Hosted on GitHub Pages &mdash; Theme by 
+			<a href="https://github.com/orderedlist">orderedlist</a>
+		</p>
+	</footer>
+	<!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
+</body>
+</html>
