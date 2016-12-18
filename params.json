@@ -1,6 +1,0 @@
-{
-  "name": "Adamdavis321.GitHub.io",
-  "tagline": "",
-  "body": "## Projects\r\n\r\n### Column Convertor\r\nThe [Column Convertor](columnConvertor.html) is a simple tool to convert a column of data into a comma-separated list. \r\n\r\n### Estimating Scratchpad\r\nThe [Estimating Scratchpad](estimating/estimating.html) is a simple web app for estimating software projects. [Here](estimating/estimating.html#explanation) is an explanation of the algorithm it uses. This type of calculation can easily be done in a spreadsheet, and that's where I would recommend doing it. I only developed the Estimating Scratchpad to document the estimation process and try out some new ideas for organizing JavaScript applications.\r\n\r\n### Special Characters\r\nThis [dynamic table](special_chars/specialCharacters.html) shows the special characters which are defined (named) in HTML. The grouping and notes were added by me. You can select which groups are shown by clicking the check-boxes, and sort the table by clicking on the column headings.\r\n\r\nThis [dynamic table](special_chars/characterGenerator.html) can show the UTF-8 characters from code point U+0000 to U+2FFF.\r\n",
-  "note": "Don't delete this file! It's used internally to help with page regeneration."
-}
