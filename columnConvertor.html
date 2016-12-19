@@ -2,12 +2,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Column Convertor</title>
 
-	<link rel="stylesheet" href="stylesheets/styles.css">
-	<link rel="stylesheet" href="stylesheets/github-dark.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="generic/css/standard.css">
+	<link rel="shortcut icon" href="generic/images/page.ico">
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -27,15 +27,15 @@
 		}
 	</style>
 	<style type="text/css" media="screen">
-		.wrapper {
+		article {
 			margin: 0 auto;
 			max-width: 64em;
 			min-width: 52em;
 			width: auto;
 		}
 	</style>
-	<script type="text/javascript" src="javascripts/MiscUtils.js"></script>
-	<script type="text/javascript" src="javascripts/InputUtils.js"></script>
+	<script type="text/javascript" src="generic/js/MiscUtils.js"></script>
+	<script type="text/javascript" src="generic/js/InputUtils.js"></script>
 	<script type="text/javascript">
 		cvtAction= function(colText, isNumeric, maxWidth) {
 			var items= colText.split("\n");
@@ -104,67 +104,65 @@
 	</script>
 </head>
 <body>
-	<div class="wrapper">
-		<header class="without-description">
-			<h1>Column Convertor</h1>
-		</header>
-		<section id="pageContent">
-			<form id="convertForm" name="convertForm" action="columnConvertor.html">
-	
-				<div>
-					<table class="FormTable">
-						<tr>
-							<td>Data Type:</td>
-							<td>
-								<label><input type="radio" name="dataType" value="char" 
-										checked="checked">Character</label>
-								<label><input type="radio" name="dataType" 
-										value="num">Numeric</label>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<label for="maxWidth">Maximum width:</label>
-							</td>
-							<td>
-									<input type="text" id="maxWidth" name="maxWidth" 
-											size="3" maxlength="3" value="60">
-							</td>
-						</tr>
-					</table>
-					<table class="FormTable">
-						<tr>
-							<td>
-								<label>Input (column):<br>
-									<textarea id="inputText" name="inputText" rows="10" 
-											cols="20"></textarea>
-								</label>
-							</td>
-							<td>
-								<label>Output (list):<br>
-									<textarea id="outputText" name="outputText" rows="10" 
-											cols="60"></textarea>
-								</label>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="2">
-								<input type="submit" id="convertText" name="convertText" 
-										value="Convert">
-							</td>
-						</tr>
-					</table>
-				</div>
-	
-			</form>
-		</section>
+<article>
+	<header>
+		<h1>Column Convertor</h1>
+	</header>
+	<div id="pageContent">
+		<form id="convertForm" name="convertForm" action="columnConvertor.html">
+
+			<table class="FormTable">
+				<tr>
+					<td>Data Type:</td>
+					<td>
+						<label><input type="radio" name="dataType" value="char" 
+								checked="checked">Character</label>
+						<label><input type="radio" name="dataType" 
+								value="num">Numeric</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="maxWidth">Maximum width:</label>
+					</td>
+					<td>
+							<input type="text" id="maxWidth" name="maxWidth" 
+									size="3" maxlength="3" value="60">
+					</td>
+				</tr>
+			</table>
+			
+			<table class="FormTable">
+				<tr>
+					<td>
+						<label>Input (column):<br>
+							<textarea id="inputText" name="inputText" rows="10" 
+									cols="20"></textarea>
+						</label>
+					</td>
+					<td>
+						<label>Output (list):<br>
+							<textarea id="outputText" name="outputText" rows="10" 
+									cols="60"></textarea>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit" id="convertText" name="convertText" 
+								value="Convert">
+					</td>
+				</tr>
+			</table>
+
+		</form>
 	</div>
 	<footer>
-		<p>
-			Hosted on GitHub Pages &mdash; Theme by 
-			<a href="https://github.com/orderedlist">orderedlist</a>
-		</p>
+		<div class="Author">Created by Adam Davis</div>
+		<div class="Links"><a href="index.html">Home</a></div>
+		<div class="FloatBlocker"></div>
 	</footer>
 
+</article>
 </body>
 </html>

@@ -1,0 +1,51 @@
+@charset "UTF-8";
+@media all {
+	
+	table.DataTable {
+		border: 1px solid #808080;
+		/* Must specify cellspacing="0" in the table tag to get the desired result */
+		border-collapse: separate;
+		border-spacing: 0px;
+	}
+	table.DataTable tr td {
+		border: 1px solid #808080;
+	}
+	table.DataTable th {
+		border-width: 2px;
+		border-style: solid;
+		border-color: #F7F7F7 #606060 #606060 #F7F7F7;
+		padding-left: 2.0em;
+		padding-right: 2.0em;
+	}
+	table.DataTable th.sortedAsc {
+		border-width: 2px;
+		border-style: solid;
+		border-color: #606060 #F7F7F7 #F7F7F7 #606060;
+		background-image: url('../images/ascending_w.png');
+		background-position: center right;
+		background-repeat: no-repeat;
+	}
+	table.DataTable th.sortedDesc {
+		border-width: 2px;
+		border-style: solid;
+		border-color: #606060 #F7F7F7 #F7F7F7 #606060;
+		background-image: url('../images/descending_w.png');
+		background-position: center right;
+		background-repeat: no-repeat;
+	}
+
+} /* end media all */
+
+@media screen {
+
+	table.DataTable th {
+		background-color: #D2D2D2;
+		color: black;
+		cursor: pointer;
+	}
+	table.DataTable th.sortedAsc, table.DataTable th.sortedDesc {
+		background-color: #999999;
+		color: white;
+	}
+
+} /* end media screen */

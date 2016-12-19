@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+@media all {
+  /* jQuery-UI style overrides */
+  .ui-dialog .ui-dialog-buttonpane button {
+    margin: 0.25em 0.2em 0.25em 0;
+  }
+  .ui-widget .ui-widget {
+    font-size: 88%;
+  }
+  .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+    font-family: inherit;
+    font-size: 88%;
+  }
+  .ui-widget {
+    font-family: inherit;
+    font-size: 100%/*{fsDefault}*/;
+  }
+  .ui-widget {
+    font-family: inherit;
+    font-size: 100%/*{fsDefault}*/;
+  }
+  input.ui-button {
+    padding: 0.2em 0.4em;
+  }
+  .ui-button-text-only .ui-button-text {
+    padding: 0.2em 0.4em;
+  }
+  .ui-tabs .ui-tabs-nav li a {
+    padding: 0.2em 0.4em;
+  }
+}
+
+@media screen {
+  /* jQuery-UI style additions */
+  .ui-selected {
+    background-color: #F39814;
+    color: white;
+  }
+}

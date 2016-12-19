@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+@media all {
+ul.TreeList {
+	padding: 0;
+}
+ul.TreeList ul {
+	padding: 0 0 0 1.5em;
+}
+ul.TreeList li {
+	list-style: none;
+}
+ul.TreeList li.TreeList-closed::before {
+	content: "\25B8";
+	cursor: pointer;
+	display: inline-block;
+	font-weight: bold;
+	width: 1.5em;
+}
+ul.TreeList li.TreeList-open::before {
+	content: "\25BE";
+	cursor: pointer;
+	display: inline-block;
+	font-weight: bold;
+	width: 1.5em;
+}
+ul.TreeList li.TreeList-end {
+	padding: 0 0 0 1.5em;
+}
+}

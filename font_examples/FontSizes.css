@@ -1,0 +1,202 @@
+@charset "UTF-8";
+@media all {
+
+.SizeName {
+	width: 4em;
+}
+
+.Pt-down7 {
+	font-size: 7pt;
+}
+.Pt-down6 {
+	font-size: 7.5pt;
+}
+.Pt-down5 {
+	font-size: 8pt;
+}
+.Pt-down4 {
+	font-size: 9pt;
+}
+.Pt-down3 {
+	font-size: 10pt;
+}
+.Pt-down2 {
+	font-size: 10.5pt;
+}
+.Pt-down1 {
+	font-size: 11pt;
+}
+.Pt-med {
+	font-size: 12pt;
+}
+.Pt-up1 {
+	font-size: 13pt;
+}
+.Pt-up2 {
+	font-size: 13.5pt;
+}
+.Pt-up3 {
+	font-size: 14pt;
+}
+.Pt-up4 {
+	font-size: 15pt;
+}
+.Pt-up5 {
+	font-size: 16pt;
+}
+.Pt-up6 {
+	font-size: 16.5pt;
+}
+.Pt-up7 {
+	font-size: 17pt;
+}
+
+.Px-down7 {
+	font-size: 9px;
+}
+.Px-down6 {
+	font-size: 10px;
+}
+.Px-down5 {
+	font-size: 11px;
+}
+.Px-down4 {
+	font-size: 12px;
+}
+.Px-down3 {
+	font-size: 13px;
+}
+.Px-down2 {
+	font-size: 14px;
+}
+.Px-down1 {
+	font-size: 15px;
+}
+.Px-med {
+	font-size: 16px;
+}
+.Px-up1 {
+	font-size: 17px;
+}
+.Px-up2 {
+	font-size: 18px;
+}
+.Px-up3 {
+	font-size: 19px;
+}
+.Px-up4 {
+	font-size: 20px;
+}
+.Px-up5 {
+	font-size: 21px;
+}
+.Px-up6 {
+	font-size: 22px;
+}
+.Px-up7 {
+	font-size: 23px;
+}
+
+.Pc-down7 {
+	font-size: 58%;
+}
+.Pc-down6 {
+	font-size: 64%;
+}
+.Pc-down5 {
+	font-size: 70%;
+}
+.Pc-down4 {
+	font-size: 76%;
+}
+.Pc-down3 {
+	font-size: 82%;
+}
+.Pc-down2 {
+	font-size: 88%;
+}
+.Pc-down1 {
+	font-size: 94%;
+}
+.Pc-med {
+	font-size: 100%;
+}
+.Pc-up1 {
+	font-size: 106%;
+}
+.Pc-up2 {
+	font-size: 112%;
+}
+.Pc-up3 {
+	font-size: 118%;
+}
+.Pc-up4 {
+	font-size: 124%;
+}
+.Pc-up5 {
+	font-size: 130%;
+}
+.Pc-up6 {
+	font-size: 136%;
+}
+.Pc-up7 {
+	font-size: 142%;
+}
+
+.Em-down7 {
+	font-size: 0.58em;
+}
+.Em-down6 {
+	font-size: 0.64em;
+}
+.Em-down5 {
+	font-size: 0.70em;
+}
+.Em-down4 {
+	font-size: 0.76em;
+}
+.Em-down3 {
+	font-size: 0.82em;
+}
+.Em-down2 {
+	font-size: 0.88em;
+}
+.Em-down1 {
+	font-size: 0.94em;
+}
+.Em-med {
+	font-size: 1.00em;
+}
+.Em-up1 {
+	font-size: 1.06em;
+}
+.Em-up2 {
+	font-size: 1.12em;
+}
+.Em-up3 {
+	font-size: 1.18em;
+}
+.Em-up4 {
+	font-size: 1.24em;
+}
+.Em-up5 {
+	font-size: 1.30em;
+}
+.Em-up6 {
+	font-size: 1.36em;
+}
+.Em-up7 {
+	font-size: 1.42em;
+}
+
+}
+
+@media screen {
+
+#page {
+	margin: 0 auto;
+	max-width: 80em;
+	min-width: 60em;
+}
+
+}

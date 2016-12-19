@@ -2,12 +2,13 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<title>Special Character List</title>
 
-	<link rel="stylesheet" href="../stylesheets/styles.css">
-	<link rel="stylesheet" href="../stylesheets/github-dark.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../generic/css/standard.css">
+	<link rel="stylesheet" href="../generic/css/DataTable.css">
+	<link rel="shortcut icon" href="../generic/images/page.ico">
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -34,64 +35,63 @@
 		}
 	</style>
 	<style type="text/css" media="screen">
-		.wrapper {
+		article {
 			margin: 0 auto;
 			max-width: 80em;
 			min-width: 40em;
 			width: auto;
 		}
 	</style>
-	<script type="text/javascript" src="../javascripts/MiscUtils.js"></script>
-	<script type="text/javascript" src="../javascripts/DomUtils.js"></script>
+	<script type="text/javascript" src="../generic/js/MiscUtils.js"></script>
+	<script type="text/javascript" src="../generic/js/DomUtils.js"></script>
 	<script type="text/javascript" src="specialCharacters.js"></script>
 
 </head>
 <body>
-	<div class="wrapper">
-		<header class="without-description">
-			<h1>Special Character List</h1>
-		</header>
-	<section id="pageContent">
+<article>
+	<header class="without-description">
+		<h1>Special Character List</h1>
+	</header>
+	<div id="pageContent">
 
-	<form>
-		<h4>Groups to show:</h4>
-		<div id="groupData"></div>
-		<div class="FloatBlocker"></div>
-		<input type="button" id="selectAll" name="selectAll" value="Select All" />
-		<input type="button" id="deselectAll" name="deselectAll" value="Deselect All" />
-	</form>
-	<h4>Selected Characters:</h4>
-	<table class="DataTable">
-		<thead>
-			<tr>
-				<th id="descriptionHeading">
-					Description
-				</th>
-				<th id="nameHeading">
-					Entity Name
-				</th>
-				<th id="numberHeading">
-					Decimal
-				</th>
-				<th id="groupHeading">
-					Group
-				</th>
-				<th id="notesHeading">
-					Notes
-				</th>
-			</tr>
-		</thead>
-		<tbody id="characterData"></tbody>
-	</table>
+		<form>
+			<h4>Groups to show:</h4>
+			<div id="groupData"></div>
+			<div class="FloatBlocker"></div>
+			<input type="button" id="selectAll" name="selectAll" value="Select All" />
+			<input type="button" id="deselectAll" name="deselectAll" value="Deselect All" />
+		</form>
+		<h4>Selected Characters:</h4>
+		<table class="DataTable">
+			<thead>
+				<tr>
+					<th id="descriptionHeading">
+						Description
+					</th>
+					<th id="nameHeading">
+						Entity Name
+					</th>
+					<th id="numberHeading">
+						Decimal
+					</th>
+					<th id="groupHeading">
+						Group
+					</th>
+					<th id="notesHeading">
+						Notes
+					</th>
+				</tr>
+			</thead>
+			<tbody id="characterData"></tbody>
+		</table>
 
-		</section>
 	</div>
 	<footer>
-		<p>
-			Hosted on GitHub Pages &mdash; Theme by 
-			<a href="https://github.com/orderedlist">orderedlist</a>
-		</p>
+		<div class="Author">Created by Adam Davis</div>
+		<div class="Links"><a href="../index.html">Home</a></div>
+		<div class="FloatBlocker"></div>
 	</footer>
 
+</article>
 </body>
 </html>

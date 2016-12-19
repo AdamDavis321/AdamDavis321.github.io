@@ -1,0 +1,259 @@
+@charset "UTF-8";
+
+@media all {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display:block;
+}
+body {
+	font-family: "Palatino Linotype", Palatino, "Book Antiqua", serif;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	line-height: 1.0;
+	text-align: left;
+	padding: 0;
+}
+h1 {
+	font-size: 130%;
+	margin: 0.75em 0 0.5em;
+}
+h2 {
+	font-size: 118%;
+	margin: 0.75em 0 0.5em;
+}
+h3 {
+	font-size: 112%;
+	margin: 0.5em 0 0.25em;
+}
+h4 {
+	font-size: 106%;
+	margin: 0.5em 0 0.25em;
+}
+h5 {
+	font-size: 100%;
+	margin: 0.25em 0 0;
+}
+h6 {
+	font-size: 94%;
+	margin: 0.25em 0 0;
+}
+div, form, pre, table, thead, tbody, tfoot, tr, th, td, caption, li, dt, label, button, 
+input, select, textarea {
+	margin: 0;
+	padding: 0;
+}
+p {
+	line-height: inherit;
+	margin: 1em 0;
+	padding: 0;
+}
+pre, code {
+	font-family: "Lucida Console", "Monaco", monospace;
+	font-size: 88%;
+}
+sub, sup {
+	line-height: 0;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	empty-cells: show;
+}
+caption {
+	caption-side: top;
+}
+td, th {
+	padding: 4px;
+}
+ul, ol, dl, dd {
+	margin: 0;
+	padding: 0 2em;
+}
+input, select, textarea {
+	border-width: 1px;
+	border-style: solid;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 88%;
+	line-height: 1.2;
+}
+button {
+	border-width: 1px;
+	border-style: solid;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 88%;
+}
+
+a:LINK {
+	color: #0000C0;
+	text-decoration: none;
+}
+a[href]:HOVER {
+	text-decoration: underline;
+}
+a[href]:ACTIVE {
+	color: #C00000;
+	text-decoration: underline;
+}
+a:VISITED {
+	color: #500090;
+}
+
+#pageHeader, header {
+	clear: both;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+#pageHeader h1, header h1 {
+	margin: 0;
+}
+#tableOfContents, nav {
+	margin-top: 1em;
+	font-size: 82%;
+}
+#pageContent {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+#pageFooter, footer {
+	clear: both;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+#pageFooter .Author, footer .Author {
+	float: left;
+	font-size: 82%;
+}
+#pageFooter .Links, footer .Links {
+	float: right;
+	font-size: 82%;
+}
+
+table.TableLines {
+	border: 2px solid gray;
+}
+.TableLines td, .TableLines th {
+	border: 1px solid gray;
+}
+.TableLines thead th {
+	border-bottom: 2px solid gray;
+}
+.TableLines thead th.MultiLevel {
+	border-bottom: 0;
+}
+.TableLines tfoot td {
+	border-top: 2px solid gray;
+}
+
+.FullWidth {
+	width: 100%;
+}
+
+.FloatBlocker {
+	clear: both;
+}
+}
+
+@media screen {
+body {
+	background-color: #383850;
+	font-size: 100%;
+	padding: 0.5em 0.5%;
+}
+
+#page, article {
+	background-color: #F7F7FF;
+	border-radius: 10px;
+	color: black;
+}
+#pageHeader, header {
+	background-color: #C8C8D0;
+	border-radius: 10px 10px 0 0;
+	min-height: 1.5em;
+	padding-right: 0.5%;
+	padding-left: 0.5%;
+}
+#pageContent {
+	padding-right: 0.5%;
+	padding-left: 0.5%;
+}
+#pageFooter, footer {
+	background-color: #C8C8D0;
+	border-radius: 0 0 10px 10px;
+	min-height: 1.5em;
+	padding-right: 0.5%;
+	padding-left: 0.5%;
+}
+
+input, select, textarea {
+	background-color: white;
+	border-color: #8E8E91 #C8C8D0 #C8C8D0 #8E8E91;
+	color: black;
+}
+button, input[type=button], input[type=image], input[type=reset], input[type=submit] {
+	background-color: #D9D7D5;
+	border-color: #FFFFFF #8E8E91 #8E8E91 #FFFFFF;
+	color: black;
+}
+
+input:hover, select:hover, textarea:hover {
+	border-color: #8E8E91 #C8C8D0 #C8C8D0 #8E8E91;
+}
+button:hover, input[type=button]:hover, input[type=image]:hover, input[type=reset]:hover,
+		input[type=submit]:hover {
+	background-color: #D5D7D9;
+	border-color: #CFF1FF #6ED6FF #6ED6FF #CFF1FF; /*#FFFFFF #8E8EFF #8E8EFF #FFFFFF*/
+}
+
+input:focus, select:focus, textarea:focus {
+	border-color: #7EB2C8 #6ED6FF #6ED6FF #7EB2C8;
+	outline-style: none;
+}
+button:focus, input[type=button]:focus, input[type=image]:focus, input[type=reset]:focus,
+		input[type=submit]:focus {
+	background-color: #D5D7D9;
+	border-color: #CFF1FF #6ED6FF #6ED6FF #CFF1FF; /*#FFFFFF #8E8EFF #8E8EFF #FFFFFF*/
+	outline-style: none;
+}
+
+input[disabled], select[disabled], textarea[disabled] {
+	background-color: #F4F4F4;
+	border-color: #8E8E91 #C8C8D0 #C8C8D0 #8E8E91;
+	color: #8D8A88;
+}
+button[disabled], input[type=button][disabled], input[type=image][disabled],
+		input[type=reset][disabled], input[type=submit][disabled] {
+	background-color: #D9D7D5;
+	border-color: #FFFFFF #8E8E91 #8E8E91 #FFFFFF;
+	color: #8D8A88;
+}
+
+input[readonly], select[readonly], textarea[readonly] {
+	background-color: #F4F4F4;
+	border-color: #8E8E91 #C8C8D0 #C8C8D0 #8E8E91;
+	color: black;
+}
+
+.TableLines thead th, .TableLines tfoot td {
+	background-color: #C8C8D0;
+}
+.TableLines tbody tr.Even {
+	background-color: #F7F7FF;
+}
+.TableLines tbody tr.Odd {
+	background-color: white;
+}
+}
+
+@media print {
+body {
+	font-size: 12pt;
+}
+#tableOfContents, nav {
+	display: none;
+}
+}

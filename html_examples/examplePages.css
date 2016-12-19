@@ -1,0 +1,76 @@
+@charset "UTF-8";
+@media all {
+
+#textarea1, #textarea4, #textarea5 {
+	height: 6em; /* 1.2em per row */
+	width: 30em; /* 0.6em per col */
+}
+
+#textarea2 {
+	height: 2.4em;
+	width: 48em;
+}
+
+#textarea3 {
+	height: 12em;
+	width: 24em;
+}
+
+#file1, #file2 {
+	height: 1.68em;
+	width: 20.4em;
+}
+
+.TopBorder {
+	border-top: 1px solid #d2d2d2;
+	clear: both;
+}
+
+.TopBorder div {
+	clear: left;
+	float: left;
+	width: auto;
+}
+
+.TopBorder div.Notes {
+	clear: right;
+	color: #880000;
+	float: right;
+	font-size: 82%;
+	width: 30%;
+}
+
+}
+
+@media screen {
+
+#page {
+	margin: 0 auto;
+	max-width: 80em;
+	min-width: 49em;
+}
+
+.GradientVerticalDarkToLight {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d2d2d7', endColorstr='#f3f3f3'); /* for IE */
+	background: -webkit-linear-gradient(top, #d2d2d7, #f3f3f3); /* for webkit */
+	background: -moz-linear-gradient(top, #d2d2d7, #f3f3f3); /* for firefox 3.6+ */
+	background: -ms-linear-gradient(top, #d2d2d7, #f3f3f3); /* for IE 9+ */
+	background: -o-linear-gradient(top, #d2d2d7, #f3f3f3); /* for Opera */
+	background: linear-gradient(top, #d2d2d7, #f3f3f3); /* standard */
+	height: 4em;
+	margin: 1em;
+	width: 20em;
+}
+.GradientHorizontalLightToDark {
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr='#f3f3f3', endColorstr='#d2d2d7'); /* for IE */
+	background: -webkit-linear-gradient(left, #f3f3f3, #d2d2d7); /* for webkit */
+	background: -moz-linear-gradient(left, #f3f3f3, #d2d2d7); /* for firefox 3.6+ */
+	background: -ms-linear-gradient(left, #f3f3f3, #d2d2d7); /* for IE 9+ */
+	background: -o-linear-gradient(left, #f3f3f3, #d2d2d7); /* for Opera */
+	background: linear-gradient(left, #f3f3f3, #d2d2d7); /* standard */
+	height: 4em;
+	margin: 1em;
+	width: 20em;
+}
+	
+}

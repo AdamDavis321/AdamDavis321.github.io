@@ -2,55 +2,85 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<title>AdamDavis321 on GitHub</title>
 
-	<link rel="stylesheet" href="stylesheets/styles.css">
-	<link rel="stylesheet" href="stylesheets/github-dark.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="generic/css/standard.css">
+	<link rel="shortcut icon" href="generic/images/page.ico">
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
 	<style type="text/css" media="screen">
-		.wrapper {
+		article {
 			margin: 0 auto;
 			max-width: 64em;
-			min-width: 35em;
 			width: auto;
+		}
+		#projectArea {
+			float: left;
+			margin-bottom: 0.5em;
+			min-width: 16em;
+			padding-right: 0.5%;
+			width: 65.5%;
+		}
+		#linkArea {
+			border-left: 1px solid #d2d2d2;
+			float: left; /* right; */
+			margin-bottom: 0.5em;
+			min-width: 11em;
+			padding-left: 0.5%;
+			width: 33%;
+		}
+		#projectArea h3 {
+			margin-bottom: 0.2em;
+		}
+		#projectArea p {
+			margin-top: 0;
+		}
+	</style>
+	<style type="text/css" media="screen and (max-width: 578px)">
+		article {
+			min-width: 18em;
+		}
+		#projectArea {
+			padding-left: 0.5%;
+			width: 98.5%;
+		}
+		#linkArea {
+			width: 98.5%;
+		}
+	</style>
+	<style type="text/css" media="print">
+		a[href]:after {
+			content: " (" attr(href) ") ";
+			font-size: 88%;
 		}
 	</style>
 </head>
 <body>
-	<div class="wrapper">
-		<header class="without-description">
-			<h1>AdamDavis321 on GitHub</h1>
-			<p class="view">
-				<a href="https://github.com/AdamDavis321">View the Project on GitHub 
-					<small>AdamDavis321</small>
-				</a>
-			</p>
-			<ul>
-				<li class="single">
-					<a href="https://github.com/AdamDavis321/AdamDavis321.github.io">View On 
-						<strong>GitHub</strong>
-					</a>
-				</li>
-			</ul>
-		</header>
-		<section>
+<article>
+	<header>
+		<h1>AdamDavis321 on GitHub</h1>
+		<nav>
+			<a href="#columnCvt">Column Convertor</a>
+			| <a href="#estimating">Estimating Scratchpad</a>
+			| <a href="#standardCSS">Standard CSS</a> 
+			| <a href="#fontsInHTML">Fonts in HTML</a> 
+			| <a href="#specialChars">Special Characters</a> 
+			| <a href="#miscPages">Miscellaneous Pages</a>
+			| <a href="links.html">More Links</a>
+		</nav>
+	</header>
+	<div id="pageContent">
 
-			<h2>
-				<a id="projects" class="anchor" href="#projects" aria-hidden="true"><span 
-						aria-hidden="true" class="octicon octicon-link"></span></a>
-				Projects
-			</h2>
+		<div id="projectArea">
+			<h2>Projects</h2>
 
 			<h3>
-				<a id="column-convertor" class="anchor" href="#column-convertor" 
-						aria-hidden="true"><span aria-hidden="true" 
-						class="octicon octicon-link"></span></a>Column Convertor
+				<a id="columnCvt">Column Convertor</a>
 			</h3>
 			<p>
 				The <a href="columnConvertor.html">Column Convertor</a> is a simple tool to 
@@ -58,9 +88,7 @@
 			</p>
 
 			<h3>
-				<a id="estimating-scratchpad" class="anchor" href="#estimating-scratchpad" 
-						aria-hidden="true"><span aria-hidden="true" 
-						class="octicon octicon-link"></span></a>Estimating Scratchpad
+				<a id="estimating">Estimating Scratchpad</a>
 			</h3>
 			<p>
 				The <a href="estimating/estimating.html">Estimating Scratchpad</a> is a simple 
@@ -73,9 +101,35 @@
 			</p>
 
 			<h3>
-				<a id="special-characters" class="anchor" href="#special-characters" 
-						aria-hidden="true"><span aria-hidden="true" 
-						class="octicon octicon-link"></span></a>Special Characters
+				<a id="standardCSS">Standard CSS</a>
+			</h3>
+			<p>
+				I used these example pages (<a href="html_examples/Example-HTML-unknown.html">1,</a> 
+				<a href="html_examples/Example-HTML4_01s.html">2,</a> 
+				<a href="html_examples/Example-XHTML1_0s.html">3,</a> 
+				<a href="html_examples/Example-HTML5.html">and 4</a>) when testing my 
+				<a href="generic/css/standard.css">standard.css</a> style sheet. The idea behind 
+				this style sheet was to create a reasonable default look for standard HTML 
+				elements which would appear similar in a variety of browsers.
+			</p>
+
+			<h3>
+				<a id="fontsInHTML">Fonts in HTML</a>
+			</h3>
+			<p>
+				The <a href="font_examples/FontSizes.html">Font Size Samples</a> page contains 
+				several tables showing text at different sizes and using different units of 
+				measure (pt, px, %, and em). 
+			</p>
+			<p>
+				The <a href="font_examples/FontSamples.html">Font Type Face Samples</a> page 
+				contains several tables showing how different fonts are rendered in the browser. 
+				It is by no means a comprehensive list of fonts, just a few which I have seen 
+				and used.
+			</p>
+
+			<h3>
+				<a id="specialChars">Special Characters</a>
 			</h3>
 			<p>
 				This <a href="special_chars/specialCharacters.html">dynamic table</a> shows 
@@ -88,14 +142,68 @@
 				show the UTF-8 characters from code point U+0000 to U+2FFF.
 			</p>
 
-		</section>
+			<h3>
+				<a id="miscPages">Miscellaneous Pages</a>
+			</h3>
+			<ul>
+				<li><a href="displayResolutions.html">Common Display Resolutions</a></li>
+				<li><a href="testConversions.html">Character Conversions</a></li>
+				<li><a href="testDateFunctions.html">Date Functions</a></li>
+				<li><a href="testHexDecConversion.html">Hexadecimal/Decimal Conversions</a></li>
+				<li><a href="testTreeList.html">Accordian-like Tree List</a></li>
+				<li><a href="testTextWrapping.html">CSS Text-Wrapping</a></li>
+				<li><a href="html5_sample/SampleHTML5Page.html">HTML5 Test Page</a></li>
+				<li><a href="mvc_sample/mvcTest2.html">Minimal MVC Library Test page</a></li>
+				<li><a href="localStorageEditor.html">Local Storage Editor</a></li>
+			</ul>
+		</div>
+
+		<div id="linkArea">
+			<h2>Links</h2>
+			<ul>
+				<li id="linkCategory1">Development: HTML/Web
+					<ul>
+						<li><a href="https://www.w3.org/TR/CSS2/">
+							Cascading Style Sheets, Level 2.1</a></li>
+						<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference">
+							MDN: HTML Reference</a></li>
+						<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">
+							MDN: DOM Reference</a></li>
+					</ul>
+				</li>
+				
+				<li id="linkCategory2">Development: Java
+					<ul>
+						<li><a href="http://docs.oracle.com/javase/specs/jls/se8/html/index.html">
+							Java Language Specification (SE 8)</a></li>
+						<li><a href="http://docs.oracle.com/javaee/7/api/">
+							Java Enterprise Edition 7 API</a></li>
+						<li><a href="http://docs.oracle.com/javase/8/docs/api/index.html">
+							Java Standard Edition 8 API</a></li>
+					</ul>
+				</li>
+				
+				<li id="linkCategory3">Miscellaneous Sites
+					<ul>
+						<li><a href="http://mail.google.com/mail?hl=en">
+							GMail</a></li>
+					</ul>
+				</li>
+				
+				<li><a href="links.html">More Links</a></li>
+			</ul>
+		</div>
+
 	</div>
 	<footer>
-		<p>
-			Hosted on GitHub Pages &mdash; Theme by 
-			<a href="https://github.com/orderedlist">orderedlist</a>
-		</p>
+		<div class="Author">Created by Adam Davis</div>
+		<div class="Links">
+			<a href="https://github.com/AdamDavis321/AdamDavis321.github.io"
+				>View On GitHub</a>
+		</div>
+		<div class="FloatBlocker"></div>
 	</footer>
-	
+
+</article>
 </body>
 </html>

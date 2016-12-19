@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="AUTHOR" content="Adam Davis" />
+ <title>Example XHTML 1.0 Strict Page</title>
+ <link rel="StyleSheet" href="../generic/css/standard.css" title="Standard" type="text/css" />
+ <link rel="StyleSheet" href="examplePages.css" title="Standard" type="text/css" />
+ <link rel="shortcut icon" href="../generic/images/page.ico" />
+</head>
+<body>
+<div id="page">
+
+ <div id="pageHeader">
+  <h1>Example 3: XHTML 1.0 Strict Page</h1>
+  <div id="tableOfContents">
+   <a href="#headings">Headings</a>
+   | <a href="#paragraphs">Paragraphs</a>
+   | <a href="#lists">Lists</a>
+   | <a href="#tables">Tables</a>
+   | <a href="#forms">Forms</a>
+   | <a href="#gradients">Gradients</a>
+   | <a href="Example-HTML-unknown.html">1: HTML without a DOCTYPE</a>
+   | <a href="Example-HTML4_01s.html">2: HTML 4.01 Strict</a>
+   | <a href="Example-HTML5.html">4: HTML 5</a>
+  </div>
+ </div>
+ <div id="pageContent">
+
+ <h2><a name="headings">Headings</a></h2>
+ <h1>Level 1</h1>
+ <h2>Level 2</h2>
+ <h3>Level 3</h3>
+ <h4>Level 4</h4>
+ <h5>Level 5</h5>
+ <h6>Level 6</h6>
+
+ <h2 class="TopBorder"><a name="paragraphs">Paragraphs</a></h2>
+ <p>This is a short paragraph.</p>
+ <p>
+  This paragraph is a little longer. It contains some formatted text. The 
+  1<sup>st</sup> thing to notice is the superscript<sup>1</sup>. Second is 
+  the subscript<sub>2</sub>. Some <em>emphasis</em> has been added here. 
+  <strong>Strong emphasis</strong> has been added here. Acronyms, like 
+  <acronym title="North Atlantic Treaty Organisation">NATO</acronym>, can
+  be defined where they are used. Abbreviations, like 
+  <abbr title="United Nations">U.N.</abbr>, can also be defined in-place. 
+  <cite>Citations</cite> can also be marked up so they stand out. Finally, 
+  <code>computer code</code> can be formatted differently from the 
+  surrounding text.
+ </p>
+ <p>
+  These lines<br /> have been broken<br /> to make them<br /> shorter<br /> 
+  than they would normally be.<br />
+  <br />
+  This line should be preceded by a blank line (2 <code>br</code> tags).<br />
+  <br />
+  Sometimes people use 2 <code>br</code> tags to separate paragraphs, but I try 
+  to avoid that.
+ </p>
+ <pre>This is some preformatted text:
+  indented by 2 spaces
+    indented by 4 spaces
+      indented by 6 spaces
+    indented by 4 spaces
+    indented by 4 spaces
+  indented by 2 spaces
+  indented by 2 spaces
+ </pre>
+ 
+ <h2 class="TopBorder"><a name="lists">Lists</a></h2>
+ <h3>Definition list:</h3>
+ <dl>
+  <dt>Term 1</dt><dd>Definition 1</dd>
+  <dt>Term 2</dt><dd>Definition 2</dd>
+  <dt>Term 3</dt><dd>Definition 3</dd>
+  <dt>Term 4</dt><dd>Definition 4</dd>
+ </dl>
+ <h3>Ordered list:</h3>
+ <ol id="ol1">
+  <li>Level 1, item 1</li>
+  <li>Level 1, item 2
+   <ol id="ol2">
+    <li>Level 2, item 1</li>
+    <li>Level 2, item 2
+     <ol id="ol3">
+      <li>Level 3, item 1</li>
+      <li>Level 3, item 2</li>
+     </ol>
+    </li>
+   <li>Level 2, item 3</li>
+   </ol>
+  </li>
+  <li>Level 1, item 3</li>
+ </ol>
+ <h3>Unordered list:</h3>
+ <ul id="ul1">
+  <li>Level 1, item 1</li>
+  <li>Level 1, item 2
+   <ul id="ul2">
+    <li>Level 2, item 1</li>
+    <li>Level 2, item 2
+     <ul id="ul3">
+      <li>Level 3, item 1</li>
+      <li>Level 3, item 2</li>
+     </ul>
+    </li>
+   <li>Level 2, item 3</li>
+   </ul>
+  </li>
+  <li>Level 1, item 3</li>
+ </ul>
+ 
+ <h2 class="TopBorder"><a name="tables">Tables</a></h2>
+ <table>
+  <caption>Table 1</caption>
+  <thead>
+   <tr>
+    <th>TH 1</th>
+    <th>TH 2</th>
+   </tr>
+  </thead>
+  <tfoot>
+   <tr>
+    <td>Footer cell 1</td>
+    <td>Footer cell 2</td>
+   </tr>
+  </tfoot>
+  <tbody>
+   <tr>
+    <td>Row 1, column 1</td>
+    <td>Row 1, column 2</td>
+   </tr>
+   <tr>
+    <td>Row 2, column 1</td>
+    <td>Row 2, column 2</td>
+   </tr>
+  </tbody>
+ </table>
+ <table class="TableLines">
+  <caption>Table 2 with lines</caption>
+  <thead>
+   <tr>
+    <th>TH 1</th>
+    <th>TH 2</th>
+    <th>TH 3</th>
+    <th>TH 4</th>
+   </tr>
+  </thead>
+  <tfoot>
+   <tr>
+    <td>Footer cell 1</td>
+    <td>Footer cell 2</td>
+    <td>Footer cell 3</td>
+    <td>Footer cell 4</td>
+   </tr>
+  </tfoot>
+  <tbody>
+   <tr>
+    <td>Row 1, column 1</td>
+    <td>Row 1, column 2</td>
+    <td>Row 1, column 3</td>
+    <td>Row 1, column 4</td>
+   </tr>
+   <tr>
+    <td>Row 2, column 1</td>
+    <td>Row 2, column 2</td>
+    <td colspan="2">Row 2, column 3-4</td>
+   </tr>
+   <tr>
+    <td rowspan="2">Row 3-4, column 1</td>
+    <td>Row 3, column 2</td>
+    <td>Row 3, column 3</td>
+    <td>Row 3, column 4</td>
+   </tr>
+   <tr>
+    <td>Row 4, column 2</td>
+    <td>Row 4, column 3</td>
+    <td>Row 4, column 4</td>
+   </tr>
+   <tr>
+    <td>Row 5, column 1</td>
+    <td>Row 5, column 2</td>
+    <td>Row 5, column 3</td>
+    <td>Row 5, column 4</td>
+   </tr>
+  </tbody>
+ </table>
+ <table class="TableLines">
+  <caption>Table 3 with lines and alternating rows</caption>
+  <thead>
+   <tr>
+    <th>TH 1</th>
+    <th>TH 2</th>
+    <th>TH 3</th>
+    <th>TH 4</th>
+    <th>TH 5</th>
+    <th>TH 6</th>
+    <th>TH 7</th>
+   </tr>
+  </thead>
+  <tfoot>
+   <tr>
+    <td>Footer cell 1</td>
+    <td>Footer cell 2</td>
+    <td>Footer cell 3</td>
+    <td>Footer cell 4</td>
+    <td>Footer cell 5</td>
+    <td>Footer cell 6</td>
+    <td>Footer cell 7</td>
+   </tr>
+  </tfoot>
+  <tbody>
+   <tr class="Odd">
+    <td>Body 1, row 1, column 1</td>
+    <td>Body 1, row 1, column 2</td>
+    <td>B1, r1, c3</td>
+    <td>Body 1, row 1, column 4</td>
+    <td>B1, r1, c5</td>
+    <td>Body 1, row 1, column 6</td>
+    <td>B1, r1, c7</td>
+   </tr>
+   <tr class="Even">
+    <td>Body 1, row 2, column 1</td>
+    <td>Body 1, row 2, column 2</td>
+    <td>B1, r2, c3</td>
+    <td>Body 1, row 2, column 4</td>
+    <td>B1, r2, c5</td>
+    <td>Body 1, row 2, column 6</td>
+    <td>B1, r2, c7</td>
+   </tr>
+   <tr class="Odd">
+    <td>Body 1, row 3, column 1</td>
+    <td>Body 1, row 3, column 2</td>
+    <td>B1, r3, c3</td>
+    <td>Body 1, row 3, column 4</td>
+    <td>B1, r3, c5</td>
+    <td>Body 1, row 3, column 6</td>
+    <td>B1, r3, c7</td>
+   </tr>
+   <tr class="Even">
+    <td>Body 1, row 4, column 1</td>
+    <td>Body 1, row 4, column 2</td>
+    <td>B1, r4, c3</td>
+    <td>Body 1, row 4, column 4</td>
+    <td>B1, r4, c5</td>
+    <td>Body 1, row 4, column 6</td>
+    <td>B1, r4, c7</td>
+   </tr>
+  </tbody>
+  <tbody>
+   <tr class="Odd">
+    <td>Body 2, row 1, column 1</td>
+    <td>B2, r1, c2</td>
+    <td>Body 2, row 1, column 3</td>
+    <td>B2, r1, c4</td>
+    <td>Body 2, row 1, column 5</td>
+    <td>B2, r1, c6</td>
+    <td>Body 2, row 1, column 7</td>
+   </tr>
+   <tr class="Even">
+    <td>Body 2, row 2, column 1</td>
+    <td>B2, r2, c2</td>
+    <td>Body 2, row 2, column 3</td>
+    <td>B2, r2, c4</td>
+    <td>Body 2, row 2, column 5</td>
+    <td>B2, r2, c6</td>
+    <td>Body 2, row 2, column 7</td>
+   </tr>
+  </tbody>
+ </table>
+ 
+ <h2 class="TopBorder"><a name="forms">Forms</a></h2>
+  <form action="Example-XHTML1_0s.html" method="get" onsubmit="return false;">
+   <div>
+    Operator:
+    <div><label><input type="radio" name="operator" value="+" /> + (add)</label></div>
+    <div><label><input type="radio" name="operator" value="-" checked="checked" /> &minus; 
+    (subtract)</label></div>
+    <div><label><input type="radio" name="operator" value="*" /> &times; (multiply)
+    </label></div>
+    <div><label><input type="radio" name="operator" value="/" /> &divide; (divide)
+    </label></div>
+    <div><label><input type="radio" name="operator" value="%" disabled="disabled" /> 
+    % (modulus) (disabled)</label></div>
+   </div>
+   <div class="TopBorder">
+    Problem count:
+    <select name="count">
+     <option>50</option>
+     <option selected="selected">60</option>
+     <option>70</option>
+     <option>80</option>
+     <option>90</option>
+     <option>100</option>
+    </select>
+   </div>
+   <div>
+    Difficulty (disabled):
+    <select name="difficulty" disabled="disabled">
+     <option>Low</option>
+     <option selected="selected">Medium</option>
+     <option>High</option>
+    </select>
+   </div>
+   <div class="TopBorder">
+    <div>Check boxes:</div>
+    <div><label><input type="checkbox" name="option1" checked="checked" /> Option 1</label></div>
+    <div><label><input type="checkbox" name="option2" /> Option 2</label></div>
+    <div><label><input type="checkbox" name="option3" /> Option 3</label></div>
+    <div><label><input type="checkbox" name="option3" disabled="disabled" /> Option 4 (disabled)</label></div>
+   </div>
+   <div class="TopBorder">
+    <div>Text boxes:</div>
+    <div><label>User name: <input type="text" name="username" size="12" 
+      maxlength="10" value="1234567890" /></label></div>
+    <div><label>Password: <input type="password" name="password" size="10" 
+      maxlength="10" value="1234567890" /></label></div>
+    <div><label>Disabled: <input type="text" name="username" size="12" 
+      maxlength="10" value="1234567890" disabled="disabled" /></label></div>
+    <div><label>Read-only: <input type="text" name="username" size="12" 
+      maxlength="10" value="1234567890" readonly="readonly" /></label></div>
+    <div><label>Comments: 
+     <textarea name="textarea1" id="textarea1" rows="5" cols="50">This area is for comments (5x50). Please note that formatting is not allowed. The number of columns and rows can be specified, but there's no maximum length. Hopefully that's not a problem. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah.</textarea>
+    </label></div>
+    <div class="Notes">
+     Text area elements will vary in size between different browsers. I have explicitly set the 
+     height and width of these text areas using CSS selectors. I set the height to 1.2em per row 
+     and the width to 0.6em per column.
+    </div>
+    <div><label>Text Area 2: 
+     <textarea name="textarea2" id="textarea2" rows="2" cols="80">This is another area for comments (2x80). Please note that formatting is not allowed. The number of columns and rows can be specified, but there's no maximum length. Hopefully that's not a problem. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah.</textarea>
+    </label></div>
+    <div><label>Text Area 3: 
+     <textarea name="textarea3" id="textarea3" rows="10" cols="40">This is yet another area for comments (10x40). Please note that formatting is not allowed. The number of columns and rows can be specified, but there's no maximum length. Hopefully that's not a problem. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah.</textarea>
+    </label></div>
+    <div><label>Disabled Text Area: 
+     <textarea name="textarea4" id="textarea4" rows="5" cols="50" disabled="disabled">This is a disabled area for comments (5x50). Please note that formatting is not allowed. The number of columns and rows can be specified, but there's no maximum length. Hopefully that's not a problem. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah.</textarea>
+    </label></div>
+    <div><label>Read-only Text Area: 
+     <textarea name="textarea5" id="textarea5" rows="5" cols="50" readonly="readonly">This is a read-only area for comments (5x50). Please note that formatting is not allowed. The number of columns and rows can be specified, but there's no maximum length. Hopefully that's not a problem. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah. Blah blah blah.</textarea>
+    </label></div>
+   </div>
+   <div class="TopBorder">
+    <div>
+     <input type="submit" name="submit1" value="Submit Input" />
+     <input type="submit" name="submit2" disabled="disabled" value="Disabled Submit Input" />
+    </div>
+    <div>
+     <input type="reset" name="reset1" value="Reset Input" />
+     <input type="reset" name="reset2" disabled="disabled" value="Disabled Reset Input" />
+    </div>
+    <div>
+     <input type="button" name="button1" value="Button Input" />
+     <input type="button" name="button2" disabled="disabled" value="Disabled Button Input" />
+    </div>
+    <div>
+     <input type="image" name="image1" src="../generic/images/action_add.png" alt="Image Input" 
+       value="Image Input" />
+     <input type="image" name="image2" src="../generic/images/action_remove.png" 
+       disabled="disabled" alt="Disabled Image Input" value="Disabled Image Input" />
+    </div>
+    <div>
+     <button type="button" name="button3">Button</button>
+     <button type="button" name="button4" disabled="disabled">Disabled Button</button>
+    </div>
+    <div>
+     File Input: <input type="file" name="file1" id="file1" /> &nbsp;&nbsp;
+     Disabled File Input: <input type="file" name="file2" id="file2" disabled="disabled" />
+    </div>
+    <div class="Notes">
+     File input elements will vary in size between different browsers. I have explicitly set the 
+     height and width of these elements using a CSS selector. Please note that in FireFox 3.6,
+     setting the width doesn't change the visible size of the element, but it is necessary to 
+     keep the file input from overlaying other elements.
+    </div>
+   </div>
+  </form>
+ 
+ <h2 class="TopBorder"><a name="gradients">Gradients</a></h2>
+ <div class="GradientVerticalDarkToLight">
+  Vertical: Dark to Light
+ </div>
+ <div class="GradientHorizontalLightToDark">
+  Horizontal: Light to Dark
+ </div>
+
+ </div>
+ <div id="pageFooter">
+  <div class="Author">Created by Adam Davis</div>
+  <div class="Links"><a href="../index.html">Home</a></div>
+  <div class="FloatBlocker"></div>
+ </div>
+
+</div>
+</body>
+</html>
+ 
