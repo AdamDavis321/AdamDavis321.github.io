@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Links</title>
+
+	<link rel="stylesheet" href="generic/css/standard.css" />
+	<link rel="stylesheet" href="generic/css/linkCategories.css" />
+	<link rel="shortcut icon" href="generic/images/page.ico" />
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<style type="text/css" media="screen">
+		.LinkCategory {
+			height: 17em;
+			width: 22em;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload= function() {
+			if (window.location.protocol == 'file:') {
+				document.getElementById('morelinks').style.display= 'inline';
+			}
+			else {
+				document.getElementById('morelinks').style.display= 'none';
+			}
+		};
+	</script>
+</head>
+<body>
+<article>
+
+	<header>
+		<h1>Links</h1>
+		<nav>
+			<a href="#cartoons">Cartoon</a>
+			| <a href="#devhtml">Dev: HTML/Web</a> 
+			| <a href="#devjava">Dev: Java</a> 
+			| <a href="#devother">Dev: Other</a> 
+			| <a href="#linux">Linux</a> 
+			| <a href="#newsdisc">News and Discussion</a> 
+			| <a href="#sports">Sports</a> 
+			| <a href="#sportssoccer">Soccer</a>
+			<span id="morelinks">| <a href="morelinks.html">&hellip;</a></span> 
+		</nav>
+	</header>
+	<div id="pageContent">
+
+		<div class="LinkCategory">
+			<h2><a id="cartoons">Cartoon sites</a></h2>
+			<ul>
+				<li><a href="http://blindsprings.com/">Blindsprings</a></li>
+				<li><a href="http://everblue-comic.com/">Everblue</a></li>
+				<li><a href="http://www.feywinds.com/">Fey Winds</a></li>
+				<li><a href="http://www.sandraandwoo.com/gaia/">Gaia</a></li>
+				<li><a href="http://www.gunnerkrigg.com/">Gunnerkrigg Court</a></li>
+				<li><a href="http://www.sandraandwoo.com/">Sandra and Woo</a></li>
+				<li><a href="http://scarygoround.com/">Scary Go Round</a></li>
+				<li><a href="http://www.sluggy.com/">Sluggy Freelance</a></li>
+				<li><a href="http://www.snowbynight.com/">Snow by Night</a></li>
+				<li><a href="http://thedreamercomic.com/">The Dreamer</a></li>
+			</ul>
+		</div>
+
+		<div class="LinkCategory">
+			<h2><a id="devhtml">Development: HTML/Web</a></h2>
+			<ul>
+				<li><a href="http://www.alistapart.com/">A List Apart</a>
+				<li><a href="http://www.w3.org/TR/2007/CR-CSS21-20070719/cover.html#minitoc">
+						Cascading Style Sheets, Level 2.1</a></li>
+				<li><a href="http://www.htmlhelp.com/">HTML Help</a></li>
+				<li><a href="http://html5doctor.com/">HTML5 Doctor</a></li>
+				<li><a href="https://developer.mozilla.org/en-US/docs/Gecko_DOM_Reference">
+						MDN: Gecko DOM Reference</a></li>
+				<li><a href="http://eloquentjavascript.net/contents.html">Eloquent JavaScript 
+						Book</a></li>
+				<li><a href="http://www.jshint.com/">JSHint, A JavaScript Code Quality 
+						Tool</a></li>
+				<li><a href="http://meyerweb.com/eric/tools/">Eric Meyer: Tools (Color Blender, 
+						etc)</a></li>
+			</ul>
+		</div>
+
+		<div class="LinkCategory">
+			<h2><a id="devjava">Development: Java</a></h2>
+			<ul>
+				<li><a href="http://tomcat.apache.org/index.html">Apache: Tomcat</a></li>
+				<li><a href="http://docs.oracle.com/javase/specs/jls/se7/html/index.html">
+						Java Language Specification (SE 7)</a></li>
+				<li><a href="http://java.dzone.com/">
+						Javalobby</a></li>
+				<li><a href="http://www.javaranch.com/">JavaRanch</a></li>
+				<li><a href="http://docs.oracle.com/javaee/6/api/">
+						Java Enterprise Edition 6 API</a></li>
+				<li><a href="http://docs.oracle.com/javase/7/docs/api/index.html">
+						Java Standard Edition 7 API</a></li>
+				<li><a href="https://projects.spring.io/spring-framework/">
+						Spring Framework</a></li>
+				<li><a href="http://www.theserverside.com/">
+						TheServerSide.com</a></li>
+			</ul>
+		</div>
+
+		<div class="LinkCategory">
+			<h2><a id="devother">Development: Other Languages</a></h2>
+			<ul>
+				<li><a href="http://www.linuxconfig.org/Bash_scripting_Tutorial">
+						Bash scripting Tutorial</a></li>
+				<li><a href="http://www.csharp-station.com/Tutorial.aspx">
+						C# Tutorial - C# Station</a></li>
+				<li><a href="http://www.freepascal.org/">Free Pascal</a></li>
+				<li><a href="http://docs.python.org/tutorial/">Python Tutorial</a></li>
+				<li><a href="http://www.ruby-lang.org/en/documentation/quickstart/">
+						Ruby in Twenty Minutes</a></li>
+			</ul>
+		</div>
+
+		<div class="LinkCategory">
+			<h2><a id="linux">Linux sites</a></h2>
+			<ul>
+				<li><a href="http://dot.kde.org/">KDE Dot News</a></li>
+				<li><a href="http://en.tldp.org/LDP/sag/">LDP: System Administrators' Guide</a></li>
+				<li><a href="http://dsl.org/cookbook/cookbook_toc.html">Linux Cookbook</a></li>
+				<li><a href="http://www.linuxjournal.com/">Linux Journal</a></li>
+				<li><a href="http://www.mdlug.org/">MDLUG Home Page</a></li>
+			</ul>
+		</div>
+
+		<div class="LinkCategory">
+			<h2><a id="newsdisc">News and Discussion sites</a></h2>
+			<ul>
+				<li><a href="http://www.cnn.com/">CNN Interactive</a></li>
+				<li><a href="http://rootprompt.org/">Rootprompt</a></li>
+				<li><a href="http://www.slashdot.org/">Slashdot</a></li>
+				<li><a href="http://www.time.com/time/">TIME.com</a></li>
+				<li><a href="http://forecast.weather.gov/MapClick.php?lat=42.5976588&lon=-82.93940020000002&site=all&smap=1&searchresult=Charter%20Township%20of%20Clinton%2C%20MI%2048038%2C%20USA#.UjNugFS3dTA">
+						Weather: Clinton Twp.</a></li>
+			</ul>
+		</div>
+
+		<div class="LinkCategory">
+			<h2><a id="sports">Sports sites</a></h2>
+			<ul>
+				<li><a href="http://www.beinsport.tv/">beIN Sport</a></li>
+				<li><a href="http://www.cbssports.com/">CBS Sports</a></li>
+				<li><a href="http://espn.go.com/">ESPN</a></li>
+				<li><a href="http://msuspartans.collegesports.com/">
+						Michigan State Spartans Athletics</a></li>
+				<li><a href="http://www.nbcsports.com/">NBC Sports</a></li>
+			</ul>
+		</div>
+
+		<div class="LinkCategory">
+			<h2><a id="sportssoccer">Sports sites: Soccer</a></h2>
+			<ul>
+				<li><a href="http://americansoccernow.com/">American Soccer Now</a></li>
+				<li><a href="http://www.mlssoccer.com/">Major League Soccer</a></li>
+				<li><a href="http://www.si.com/soccer/planet-futbol">SI.com - Soccer</a></li>
+				<li><a href="http://www.soccerbyives.net/">Soccer By Ives</a></li>
+				<li><a href="http://theshinguardian.com/">The Shin Guardian</a></li>
+				<li><a href="http://yanks-abroad.com/">Yanks Abroad</a></li>
+				<li><a href="http://www.zonalmarking.net/">Zonal Marking</a></li>
+			</ul>
+		</div>
+
+	</div>
+	<footer>
+		<div class="Author">Created by Adam Davis</div>
+		<div class="Links"><a href="index.html">Home</a></div>
+		<div class="FloatBlocker"></div>
+	</footer>
+
+</article>
+</body>
+</html>

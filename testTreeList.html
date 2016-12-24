@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Test TreeList</title>
+
+	<link rel="stylesheet" href="generic/css/standard.css" />
+	<link rel="stylesheet" href="generic/css/treeList.css" />
+	<link rel="shortcut icon" href="generic/images/page.ico" />
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<style type="text/css" media="screen">
+		article {
+			margin: 0 auto;
+			max-width: 64em;
+			min-width: 24em;
+		}
+		header h1 {
+			margin-bottom: 0;
+		}
+		ul {
+			padding: 0 0 0 1.5em;
+		}
+		ul.TreeList li.BranchClosed::before {
+			content: "\25B9";
+			cursor: pointer;
+			display: inline-block;
+			font-weight: bold;
+			width: 1.5em;
+		}
+		ul.TreeList li.BranchOpen::before {
+			content: "\25BF";
+			cursor: pointer;
+			display: inline-block;
+			font-weight: bold;
+			width: 1.5em;
+		}
+		ul.TreeList li.BranchEnd {
+			padding: 0 0 0 1.5em;
+		}
+		.BranchClosed2 {
+			list-style-image: url("generic/images/plus.png");
+			list-style-position: outside;
+			list-style-type: none;
+		}
+		.BranchOpen2 {
+			list-style-image: url("generic/images/minus.png");
+			list-style-position: outside;
+			list-style-type: none;
+		}
+		.BranchEnd2 {
+			list-style-image: none;
+			list-style-position: outside;
+			list-style-type: none;
+		}
+	</style>
+	<script type="text/javascript" src="generic/js/MiscUtils.js"></script>
+	<script type="text/javascript" src="generic/js/treeList.js"></script>
+	<script type="text/javascript">
+		var treelist1= null;
+		var treelist2= null;
+		var treelist3= null;
+		var openCount= 0;
+		var closeCount= 0;
+
+		function branchClose(item) {
+			closeCount++;
+			var node= document.getElementById('closeCount');
+			var text= document.createTextNode('' + closeCount);
+			node.removeChild(node.lastChild);
+			node.appendChild(text);
+		}
+
+		function branchOpen(item) {
+			openCount++;
+			var node= document.getElementById('openCount');
+			var text= document.createTextNode('' + openCount);
+			node.removeChild(node.lastChild);
+			node.appendChild(text);
+		}
+		
+		window.onload= function() {
+			treelist1= new TreeList(document.getElementById('tree1'));
+			console.log('In onload: treelist1= ' + treelist1);
+			treelist2= new TreeList(document.getElementById('tree2'), {
+				closedClass: 'BranchClosed', 
+				openClass: 'BranchOpen', 
+				endClass: 'BranchEnd'
+			});
+			console.log('In onload: treelist2= ' + treelist2);
+			treelist3= new TreeList(document.getElementById('tree3'), {
+				outerClass: 'CustomTree', 
+				closedClass: 'BranchClosed2', 
+				openClass: 'BranchOpen2',  
+				endClass: 'BranchEnd2',
+				closeEvent: branchClose,
+				openEvent: branchOpen
+			});
+			console.log('In onload: treelist3= ' + treelist3);
+			document.getElementById('mainForm').onsubmit= function() {
+				return false;
+			};
+			document.getElementById('openAll1').onclick= function() {
+				treelist1.openAll();
+				return true;
+			};
+			document.getElementById('openAll2').onclick= function() {
+				treelist2.openAll();
+				return true;
+			};
+			document.getElementById('openAll3').onclick= function() {
+				treelist3.openAll();
+				return true;
+			};
+			document.getElementById('closeAll1').onclick= function() {
+				treelist1.closeAll();
+				return true;
+			};
+			document.getElementById('closeAll2').onclick= function() {
+				treelist2.closeAll();
+				return true;
+			};
+			document.getElementById('closeAll3').onclick= function() {
+				treelist3.closeAll();
+				return true;
+			};
+		};
+	</script>
+</head>
+<body>
+<article>
+
+	<div id="pageHeader">
+		<h1>Test TreeList</h1>
+	</div>
+	<div id="pageContent">
+		<form id="mainForm" name="mainForm" action="testTreeList.html">
+
+			<h2>TreeList 1: With Defaults</h2>
+			<div id="tree1">
+				<button type="button" id="openAll1" name="openAll1">Open All</button>
+				<button type="button" id="closeAll1" name="closeAll1">Close All</button>
+				<ul>
+					<li>Level 1, item 1
+						<ul>
+							<li>Level 2a, item 1</li>
+							<li>Level 2a, item 2
+								<ul>
+									<li>Level 3a, item 1</li>
+									<li>Level 3a, item 2</li>
+									<li>Level 3a, item 3</li>
+									<li>Level 3a, item 4</li>
+								</ul>
+							</li>
+							<li>Level 2a, item 3</li>
+							<li>Level 2a, item 4</li>
+						</ul>
+					</li>
+					<li>Level 1, item 2
+						<ul>
+							<li>Level 2b, item 1</li>
+							<li>Level 2b, item 2
+								<ul>
+									<li>Level 3b, item 1</li>
+									<li>Level 3b, item 2</li>
+								</ul>
+							</li>
+							<li>Level 2b, item 3</li>
+						</ul>
+					</li>
+					<li>Level 1, item 3
+						<ul>
+							<li>Level 2c, item 1
+								<ul>
+									<li>Level 3c, item 1</li>
+									<li>Level 3c, item 2
+										<ul>
+											<li>Level 4a, item 1</li>
+											<li>Level 4a, item 2</li>
+											<li>Level 4a, item 3</li>
+											<li>Level 4a, item 4</li>
+										</ul>
+									</li>
+									<li>Level 3c, item 3</li>
+									<li>Level 3c, item 4
+										<ul>
+											<li>Level 4b, item 1</li>
+											<li>Level 4b, item 2</li>
+											<li>Level 4b, item 3</li>
+										</ul>
+									</li>
+									<li>Level 3c, item 5</li>
+									<li>Level 3c, item 6</li>
+									<li>Level 3c, item 7</li>
+								</ul>
+							</li>
+							<li>Level 2d, item 2
+								<ul>
+									<li>Level 3d, item 1</li>
+									<li>Level 3d, item 2</li>
+								</ul>
+							</li>
+							<li>Level 2d, item 3</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<h2>TreeList 2: With Custom Glyphs</h2>
+			<div id="tree2">
+				<button type="button" id="openAll2" name="openAll2">Open All</button>
+				<button type="button" id="closeAll2" name="closeAll2">Close All</button>
+				<ul>
+					<li>Level 1, item 1
+						<ul>
+							<li>Level 2a, item 1</li>
+							<li>Level 2a, item 2
+								<ul>
+									<li>Level 3a, item 1</li>
+									<li>Level 3a, item 2</li>
+									<li>Level 3a, item 3</li>
+									<li>Level 3a, item 4</li>
+								</ul>
+							</li>
+							<li>Level 2a, item 3</li>
+							<li>Level 2a, item 4</li>
+						</ul>
+					</li>
+					<li>Level 1, item 2
+						<ul>
+							<li>Level 2b, item 1</li>
+							<li>Level 2b, item 2
+								<ul>
+									<li>Level 3b, item 1</li>
+									<li>Level 3b, item 2</li>
+								</ul>
+							</li>
+							<li>Level 2b, item 3</li>
+						</ul>
+					</li>
+					<li>Level 1, item 3
+						<ul>
+							<li>Level 2c, item 1
+								<ul>
+									<li>Level 3c, item 1</li>
+									<li>Level 3c, item 2
+										<ul>
+											<li>Level 4a, item 1</li>
+											<li>Level 4a, item 2</li>
+											<li>Level 4a, item 3</li>
+											<li>Level 4a, item 4</li>
+										</ul>
+									</li>
+									<li>Level 3c, item 3</li>
+									<li>Level 3c, item 4
+										<ul>
+											<li>Level 4b, item 1</li>
+											<li>Level 4b, item 2</li>
+											<li>Level 4b, item 3</li>
+										</ul>
+									</li>
+									<li>Level 3c, item 5</li>
+									<li>Level 3c, item 6</li>
+									<li>Level 3c, item 7</li>
+								</ul>
+							</li>
+							<li>Level 2d, item 2
+								<ul>
+									<li>Level 3d, item 1</li>
+									<li>Level 3d, item 2</li>
+								</ul>
+							</li>
+							<li>Level 2d, item 3</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<h2>TreeList 3: With Custom Icons and Events</h2>
+			<div>
+				Open count = <span id="openCount">0</span>, close count = 
+				<span id="closeCount">0</span>.
+			</div>
+			<div id="tree3">
+				<button type="button" id="openAll3" name="openAll3">Open All</button>
+				<button type="button" id="closeAll3" name="closeAll3">Close All</button>
+				<ul>
+					<li>Level 1, item 1
+						<ul>
+							<li>Level 2a, item 1</li>
+							<li>Level 2a, item 2
+								<ul>
+									<li>Level 3a, item 1</li>
+									<li>Level 3a, item 2</li>
+									<li>Level 3a, item 3</li>
+									<li>Level 3a, item 4</li>
+								</ul>
+							</li>
+							<li>Level 2a, item 3</li>
+							<li>Level 2a, item 4</li>
+						</ul>
+					</li>
+					<li>Level 1, item 2
+						<ul>
+							<li>Level 2b, item 1</li>
+							<li>Level 2b, item 2
+								<ul>
+									<li>Level 3b, item 1</li>
+									<li>Level 3b, item 2</li>
+								</ul>
+							</li>
+							<li>Level 2b, item 3</li>
+						</ul>
+					</li>
+					<li>Level 1, item 3
+						<ul>
+							<li>Level 2c, item 1
+								<ul>
+									<li>Level 3c, item 1</li>
+									<li>Level 3c, item 2
+										<ul>
+											<li>Level 4a, item 1</li>
+											<li>Level 4a, item 2</li>
+											<li>Level 4a, item 3</li>
+											<li>Level 4a, item 4</li>
+										</ul>
+									</li>
+									<li>Level 3c, item 3</li>
+									<li>Level 3c, item 4
+										<ul>
+											<li>Level 4b, item 1</li>
+											<li>Level 4b, item 2</li>
+											<li>Level 4b, item 3</li>
+										</ul>
+									</li>
+									<li>Level 3c, item 5</li>
+									<li>Level 3c, item 6</li>
+									<li>Level 3c, item 7</li>
+								</ul>
+							</li>
+							<li>Level 2d, item 2
+								<ul>
+									<li>Level 3d, item 1</li>
+									<li>Level 3d, item 2</li>
+								</ul>
+							</li>
+							<li>Level 2d, item 3</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</form>
+	</div>
+	<div id="pageFooter">
+		<div class="Author">Created by Adam Davis</div>
+		<div class="Links"><a href="index.html">Home</a></div>
+		<div class="FloatBlocker"></div>
+	</div>
+
+</article>
+</body>
+</html>
