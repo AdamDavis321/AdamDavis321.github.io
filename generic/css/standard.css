@@ -160,7 +160,7 @@ table.TableLines tfoot td {
 
 @media screen {
 body {
-	background-color: #383850;
+	background-color: #F7F7FF;
 	font-size: 100%;
 }
 
@@ -247,6 +247,7 @@ table.TableLines tbody tr.Odd {
 
 @media screen and (min-width: 481px) {
 body {
+	background-color: #383850;
 	padding: 0.5em 0.5em;
 }
 

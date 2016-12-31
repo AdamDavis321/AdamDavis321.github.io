@@ -44,12 +44,6 @@
 
 @media screen {
 
-#page {
-	margin: 0 auto;
-	max-width: 80em;
-	min-width: 49em;
-}
-
 .GradientVerticalDarkToLight {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d2d2d7', endColorstr='#f3f3f3'); /* for IE */
 	background: -webkit-linear-gradient(top, #d2d2d7, #f3f3f3); /* for webkit */
@@ -73,4 +67,14 @@
 	width: 20em;
 }
 	
+}
+
+@media screen and (min-width: 481px){
+
+#page, article {
+	margin: 0 auto;
+	max-width: 80em;
+	min-width: 43em;
+}
+
 }

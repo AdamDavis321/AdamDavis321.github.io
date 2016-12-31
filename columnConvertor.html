@@ -28,15 +28,14 @@
 			max-width: 64em;
 			min-width: 37em;
 		}
-		#inputText {
-			width: 14em; /* 0.7em per col */
-		}
-		#outputText {
-			width: 42em; /* 0.7em per col */
-		}
-		.FormCell {
+		.InputCell {
 			float: left;
-			margin-right: 1em;
+			width: 24%;
+		}
+		.OutputCell {
+			float: left;
+			padding-left: 1em;
+			width: 73%;
 		}
 		.FormRow {
 			clear: both;
@@ -135,13 +134,13 @@
 			</div>
 			
 			<div class="FormTable">
-				<div class="FormCell">
+				<div class="InputCell">
 					<label>Input (column):<br>
 						<textarea id="inputText" name="inputText" rows="10" 
 								cols="20"></textarea>
 					</label>
 				</div>
-				<div class="FormCell">
+				<div class="OutputCell">
 					<label>Output (list):<br>
 						<textarea id="outputText" name="outputText" rows="10" 
 								cols="60"></textarea>
