@@ -14,10 +14,12 @@ var MiscUtils = {
 	 *         or 1 if str1 is greater than str2
 	 */
 	compareAlpha: function(str1, str2) {
-		if (str1 < str2 || (!str1 && str2)) {
+		var s1 = str1? str1.toString() : null;
+		var s2 = str2? str2.toString() : null;
+		if (s1 < s2 || (!s1 && s2)) {
 			return -1;
 		}
-		else if (str1 > str2 || (str1 && !str2)) {
+		else if (s1 > s2 || (s1 && !s2)) {
 			return 1;
 		}
 		else {
@@ -25,6 +27,28 @@ var MiscUtils = {
 		}
 	},
 	
+	/**
+	 * Compare 2 string values for sorting (not case sensitive).
+	 *
+	 * @param  str1 the first string value (or null)
+	 * @param  str2 the second string value (or null)
+	 * @return {Number} -1 if str1 is less than str2, 0 if they're equal,
+	 *         or 1 if str1 is greater than str2
+	 */
+	compareAlphaNC: function(str1, str2) {
+		var s1 = str1? str1.toString().toLowerCase() : null;
+		var s2 = str2? str2.toString().toLowerCase() : null;
+		if (s1 < s2 || (!s1 && s2)) {
+			return -1;
+		}
+		else if (s1 > s2 || (s1 && !s2)) {
+			return 1;
+		}
+		else {
+			return 0;
+		}
+	},
+
 	/**
 	 * Compare 2 numeric values for sorting.
 	 *
@@ -46,7 +70,17 @@ var MiscUtils = {
 			return 0;
 		}
 		else {
-			return (num1 - num2);
+			var n1 = Number.isNaN(num1)? Number.parseFloat(num1) : num1;
+			var n2 = Number.isNaN(num2)? Number.parseFloat(num2) : num2;
+			if (n1 < n2) {
+				return -1;
+			} 
+			else if (n1 > n2) {
+				return 1;
+			}
+			else {
+				return 0;
+			}
 		}
 	},
 	

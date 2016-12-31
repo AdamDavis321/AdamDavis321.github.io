@@ -14,18 +14,12 @@
 	<![endif]-->
 
 	<style type="text/css">
-		article {
-			min-width: 37em;
-		}
-		header h1 {
-			margin-bottom: 0;
-		}
 		#storageEntries {
 			width: 100%;
 		}
-		.TableLines tfoot td {
-			background-color: transparent;
-			border-top: 1px solid gray;
+		#storageEntries tfoot td {
+			background-color: #F7F7FF;
+			border: 1px solid gray;
 		}
 		.KeyColumn {
 			width: 30%;
@@ -58,6 +52,13 @@
 			font-size: 76%;
 			padding-left: 0;
 			padding-right: 0;
+		}
+	</style>
+	<style type="text/css" media="screen and (min-width: 481px)">
+		article {
+			margin: 0 auto;
+			max-width: 64em;
+			min-width: 37em;
 		}
 	</style>
 	<script type="text/javascript" src="generic/js/MiscUtils.js"></script>
@@ -110,7 +111,7 @@
 					if (ok) {
 						localStorage[key] = value;
 						this.keys.push(key);
-						this.keys.sort(compareAlphaNC);
+						this.keys.sort(MiscUtils.compareAlphaNC);
 						keyElement.val('');
 						keyElement.css('background-color', '');
 						valueElement.val('');
@@ -126,7 +127,7 @@
 				if (event.currentTarget === event.target) {
 					var row = $(event.target).parents('tr');
 					var keyElement = row.find('td:first');
-					var key = unescapeHTML(keyElement.text());
+					var key = MiscUtils.unescapeHTML(keyElement.text());
 					if (confirm('Do you want to delete the "' + key + '" key?')) {
 						localStorage.removeItem(key);
 						var idx = $.inArray(key, this.keys);
@@ -204,7 +205,7 @@
 				if (event.currentTarget === event.target) {
 					var row = $(event.target).parents('tr');
 					var keyElement = row.find('td:first');
-					var key = unescapeHTML(keyElement.text());
+					var key = MiscUtils.unescapeHTML(keyElement.text());
 					var valueElement = row.find('.ValueInput');
 					var value = valueElement.val();
 					var prevValue = this.getPreviousValue(row);
