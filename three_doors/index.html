@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Multiple Options Game Simulation</title>
+
+	<link rel="stylesheet" href="../generic/css/standard.css">
+	<link rel="shortcut icon" href="../generic/images/page.ico">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<style type="text/css" media="all">
+		.FormTable {
+			vertical-align: middle;
+		}
+		#runSimulation {
+			padding: 2px 5px 0px 5px;
+		}
+		#outputArea {
+			border: 1px solid black;
+			padding: 0.5em;
+			width: 98%;
+		}
+	</style>
+	<style type="text/css" media="screen and (min-width: 481px)">
+		article {
+			margin: 0 auto;
+			max-width: 64em;
+			min-width: 37em;
+		}
+		.FormRow {
+			clear: both;
+		}
+	</style>
+	<script type="text/javascript" src="../generic/js/MiscUtils.js"></script>
+	<script type="text/javascript" src="../generic/js/InputUtils.js"></script>
+	<script type="text/javascript" src="../generic/js/DomUtils.js"></script>
+	<script type="text/javascript" src="optionsGame.js"></script>
+	<script type="text/javascript">
+		var houses = {
+			montyHall: new House('Monty Hall'),
+			fairReveals: new HouseFairReveals('Fair Reveals')
+		};
+		var players = {
+			never: new Player('Never Switch'),
+			random: new PlayerRandomlySwitch('Randomly Switch'),
+			always: new PlayerAlwaysSwitch('Always Switch'),
+			last: new PlayerSwitchLast('Switch Last'),
+			first: new PlayerSwitchFirst('Switch First')
+		};
+		
+		var runAction = function(houseName, numOptionsTxt, numWinningTxt, playerName, numGamesTxt) {
+			DomUtils.setTextContent(document.getElementById('outputArea'), '');
+			var numOptions = Number(numOptionsTxt);
+			var numWinning = Number(numWinningTxt);
+			var numGames = Number(numGamesTxt);
+			if (!isNaN(numOptions) && !isNaN(numWinning) && !isNaN(numGames) && numOptions > numWinning) {
+				var house = houses[houseName];
+				var player = players[playerName];
+				house.run(numOptions, numWinning, player, numGames);
+				DomUtils.setTextContent(document.getElementById('outputArea'), house.toResultString());
+			}
+			else {
+				alert('Parameters are invalid!');
+			}
+		};
+		
+		window.onload = function() {
+			document.getElementById('gameParamsForm').onsubmit = function() {
+				var houseName = InputUtils.getSelectedValues(document.getElementById('house'))[0];
+				var numOptions = document.getElementById('numOptions').value;
+				var numWinning = document.getElementById('numWinning').value;
+				var playerName = InputUtils.getSelectedValues(document.getElementById('player'))[0];
+				var numGames = document.getElementById('numGames').value;
+				runAction(houseName, numOptions, numWinning, playerName, numGames);
+				return false;
+			};
+		};
+	</script>
+</head>
+<body>
+<article>
+	<header>
+		<h1>Multiple Options Game Simulation</h1>
+	</header>
+	<div id="pageContent">
+		<form id="gameParamsForm" name="gameParamsForm" action="index.html">
+
+			<h2>Simulation Parameters</h2>
+			<div class="FormTable">
+				<div class="FormRow">
+					<label for="house">Rules for Revealing Options:</label>
+					<select id="house" name="house">
+						<option value="montyHall" selected="selected">Random except for winner and current choice</option>
+						<option value="fairReveals">Random except for winner</option>
+					</select>
+				</div>
+				<div class="FormRow">
+					<label for="numOptions">Number of Options:</label>
+					<input type="number" id="numOptions" name="numOptions" size="3" 
+							maxlength="3" value="3">
+				</div>
+				<div class="FormRow">
+					<label for="numWinning">Number of Winning Options:</label>
+					<input type="number" id="numWinning" name="numWinning" size="2" 
+							maxlength="2" readonly="readonly" value="1">
+				</div>
+				<div class="FormRow">
+					<label for="player">Playing Strategy:</label>
+					<select id="player" name="player">
+						<option value="never" selected="selected">Always keep first choice</option>
+						<option value="random">Randomly choose</option>
+						<option value="always">Always switch choices</option>
+						<option value="last">Only switch choice in the final round</option>
+						<option value="first">Only switch choice in the second round</option>
+					</select>
+				</div>
+				<div class="FormRow">
+					<label for="numGames">Number of Games to Run:</label>
+					<input type="number" id="numGames" name="numGames" size="4" 
+							maxlength="4" value="100">
+				</div>
+				<div class="FormRow">
+					<button id="runSimulation" name="runSimulation">Run Simulation</button>
+				</div>
+			</div>
+			
+		</form>
+		
+		<h2>Simulation Results</h2>
+		<pre id="outputArea"></pre>
+		
+	</div>
+	<footer>
+		<div class="Author">Created by Adam Davis</div>
+		<div class="Links"><a href="index.html">Home</a></div>
+		<div class="FloatBlocker"></div>
+	</footer>
+
+</article>
+</body>
+</html>
