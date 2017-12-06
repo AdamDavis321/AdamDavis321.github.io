@@ -49,11 +49,12 @@
 			never: new Player('Never Switch'),
 			random: new PlayerRandomlySwitch('Randomly Switch'),
 			always: new PlayerAlwaysSwitch('Always Switch'),
+			avoidFirst: new PlayerSwitchAwayFromFirst('Avoid First Choice'),
 			last: new PlayerSwitchLast('Switch Last'),
 			first: new PlayerSwitchFirst('Switch First')
 		};
 		
-		var runAction = function(houseName, numOptionsTxt, numWinningTxt, playerName, numGamesTxt) {
+		var runAction = function(houseName, numOptionsTxt, numWinningTxt, playerName, numGamesTxt, showDetail) {
 			DomUtils.setTextContent(document.getElementById('outputArea'), '');
 			var numOptions = Number(numOptionsTxt);
 			var numWinning = Number(numWinningTxt);
@@ -62,7 +63,11 @@
 				var house = houses[houseName];
 				var player = players[playerName];
 				house.run(numOptions, numWinning, player, numGames);
-				DomUtils.setTextContent(document.getElementById('outputArea'), house.toResultString());
+				var results = house.summaryString();
+				if (showDetail) {
+					results += '\n\n' + house.detailString();
+				}
+				DomUtils.setTextContent(document.getElementById('outputArea'), results);
 			}
 			else {
 				alert('Parameters are invalid!');
@@ -76,7 +81,8 @@
 				var numWinning = document.getElementById('numWinning').value;
 				var playerName = InputUtils.getSelectedValues(document.getElementById('player'))[0];
 				var numGames = document.getElementById('numGames').value;
-				runAction(houseName, numOptions, numWinning, playerName, numGames);
+				var showDetail = document.getElementById('showDetail').checked;
+				runAction(houseName, numOptions, numWinning, playerName, numGames, showDetail);
 				return false;
 			};
 		};
@@ -115,6 +121,7 @@
 						<option value="never" selected="selected">Always keep first choice</option>
 						<option value="random">Randomly choose</option>
 						<option value="always">Always switch choices</option>
+						<option value="avoidFirst">Always switch away from the first choice</option>
 						<option value="last">Only switch choice in the final round</option>
 						<option value="first">Only switch choice in the second round</option>
 					</select>
@@ -123,6 +130,9 @@
 					<label for="numGames">Number of Games to Run:</label>
 					<input type="number" id="numGames" name="numGames" size="4" 
 							maxlength="4" value="100">
+				</div>
+				<div class="FormRow">
+					<label><input type="checkbox" id="showDetail" name="showDetail">Show detailed results</label>
 				</div>
 				<div class="FormRow">
 					<button id="runSimulation" name="runSimulation">Run Simulation</button>

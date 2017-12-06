@@ -59,12 +59,37 @@ Game.prototype.isWinningChoice = function(choice) {
 	return (choice < this.winningOptions.length && this.winningOptions[choice]);
 };
 
-Game.prototype.toString = function() {
+Game.prototype.resultString = function() {
 	var s = 'Game: Options = ';
 	for (var i = 0; i < this.winningOptions.length; i++) {
 		s += ' ' + (this.winningOptions[i]? '*' : '-');
 	}
+	s += ', Choices =';
+	for (var i = 0; i < this.rounds.length; i++) {
+		s += ' ' + this.rounds[i].choice;
+	}
+	s += ', Reveals =';
+	for (var i = 0; i < this.rounds.length; i++) {
+		s += ' ' + this.rounds[i].reveal;
+	}
+	s += ', Won = ' + (this.playerWon? 'Yes' : 'no');
+	return s;
+};
+
+Game.prototype.toString = function() {
+	var s = 'Game: Options =';
+	for (var i = 0; i < this.winningOptions.length; i++) {
+		s += ' ' + (this.winningOptions[i]? '*' : '-');
+	}
 	s += ', Player = ' + this.player;
+	s += ', Choices =';
+	for (var i = 0; i < this.rounds.length; i++) {
+		s += ' ' + this.rounds[i].choice;
+	}
+	s += ', Reveals =';
+	for (var i = 0; i < this.rounds.length; i++) {
+		s += ' ' + this.rounds[i].reveal;
+	}
 	s += ', Won = ' + (this.playerWon? 'Yes' : 'no');
 	return s;
 };
@@ -107,7 +132,7 @@ House.prototype.revealOption = function(winningOptions, revealedOptions, choice,
 	return reveal;
 };
 
-House.prototype.toResultString = function() {
+House.prototype.summaryString = function() {
 	var s = 'House Rules: ' + this.name;
 	s += ', Number of options = ' + this.numOptions;
 	s += ', Number of winning options = ' + this.numWinning;
@@ -119,6 +144,23 @@ House.prototype.toResultString = function() {
 	}
 	else {
 		s += '\nCurrent game:\n';
+		s += this.currentGame;
+	}
+	return s;
+};
+
+House.prototype.detailString = function() {
+	var s = '';
+	if (this.completedGames.length > 0) {
+		s += 'Completed games:';
+		for (var i = 0; i < this.completedGames.length; i++) {
+			s += '\n    ' + this.completedGames[i].resultString();
+		}
+		var winPct = this.numWon / this.completedGames.length * 100;
+		s += '\nWin % = ' + MiscUtils.formatNumber(winPct, 1, 1);
+	}
+	else {
+		s += 'Current game:\n';
 		s += this.currentGame;
 	}
 	return s;
@@ -220,6 +262,30 @@ PlayerAlwaysSwitch.prototype.makeChoice = function(revealedOptions, numOptions, 
 	return this.previousChoice;
 };
 
+function PlayerSwitchAwayFromFirst(name) {
+	Player.call(this, name);
+	this.originalChoice = -1;
+}
+
+PlayerSwitchAwayFromFirst.prototype = clone(Player.prototype);
+PlayerSwitchAwayFromFirst.prototype.constructor = PlayerSwitchAwayFromFirst;
+
+PlayerSwitchAwayFromFirst.prototype.makeChoice = function(revealedOptions, numOptions, numWinning, previousRounds) {
+	// Always make a new choice (while avoiding the original choice)
+	if (previousRounds.length == 0) {
+		this.originalChoice = -1;
+	}
+	var choice;
+	do {
+		choice = Math.floor(Math.random() * numOptions);
+	} while (choice == this.originalChoice || isInArray(choice, revealedOptions));
+	this.previousChoice = choice;
+	if (previousRounds.length == 0) {
+		this.originalChoice = choice;
+	}
+	return choice;
+};
+
 function PlayerSwitchLast(name) {
 	Player.call(this, name);
 }
@@ -250,7 +316,7 @@ PlayerSwitchFirst.prototype.constructor = PlayerSwitchFirst;
 
 PlayerSwitchFirst.prototype.makeChoice = function(revealedOptions, numOptions, numWinning, previousRounds) {
 	// Make a choice for the first time, and re-make it at your first chance to do so
-	if (previousRounds.length == 0 || previousRounds.length == 1) {
+	if (previousRounds.length == 0 || previousRounds.length == 1 || isInArray(this.previousChoice, revealedOptions)) {
 //		if (previousRounds.length > 0)
 //			console.log('First chance to make a new choice.');
 		var choice;
